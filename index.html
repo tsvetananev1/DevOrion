@@ -12,9 +12,7 @@
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- NAVBAR                                   -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
@@ -22,12 +20,17 @@
                 DevOrion
             </a>
             <ul class="nav-links">
-                <li><a href="#about">За нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#portfolio">Портфолио</a></li>
-                <li><a href="#testimonials">Отзиви</a></li>
-                <li><a href="#contact" class="nav-cta">Контакти</a></li>
+                <li><a href="#about"    data-i18n="nav.about">За нас</a></li>
+                <li><a href="#services" data-i18n="nav.services">Услуги</a></li>
+                <li><a href="#portfolio"data-i18n="nav.portfolio">Портфолио</a></li>
+                <li><a href="#testimonials" data-i18n="nav.reviews">Отзиви</a></li>
+                <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Контакти</a></li>
             </ul>
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                <span id="langBg" class="lang-opt lang-active">БГ</span>
+                <span class="lang-sep">/</span>
+                <span id="langEn" class="lang-opt">EN</span>
+            </button>
             <button class="hamburger" id="hamburger" aria-label="Меню">
                 <span></span>
                 <span></span>
@@ -36,18 +39,16 @@
         </div>
         <div class="mobile-menu" id="mobileMenu">
             <ul>
-                <li><a href="#about">За нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#portfolio">Портфолио</a></li>
-                <li><a href="#testimonials">Отзиви</a></li>
-                <li><a href="#contact">Контакти</a></li>
+                <li><a href="#about"        data-i18n="nav.about">За нас</a></li>
+                <li><a href="#services"     data-i18n="nav.services">Услуги</a></li>
+                <li><a href="#portfolio"    data-i18n="nav.portfolio">Портфолио</a></li>
+                <li><a href="#testimonials" data-i18n="nav.reviews">Отзиви</a></li>
+                <li><a href="#contact"      data-i18n="nav.contact">Контакти</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- HERO                                     -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- HERO -->
     <section class="hero" id="hero">
         <canvas id="heroCanvas"></canvas>
         <div class="hero-bg-orb orb-1"></div>
@@ -55,52 +56,50 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                Дигитална Агенция
+                <span data-i18n="hero.badge">Дигитална Агенция</span>
             </div>
-            <h1 class="hero-title">
+            <h1 class="hero-title" data-i18n-html="hero.title">
                 Изграждаме<br>
                 <span class="gradient-text">дигиталното</span><br>
                 бъдеще
             </h1>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-i18n-html="hero.subtitle">
                 Превръщаме вашите идеи в красиви, мощни уебсайтове,<br class="br-desktop">
                 които впечатляват и конвертират.
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">
-                    <span>Започнете проект</span>
+                    <span data-i18n="hero.cta.primary">Започнете проект</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="#portfolio" class="btn btn-secondary">Вижте работата ни</a>
+                <a href="#portfolio" class="btn btn-secondary" data-i18n="hero.cta.secondary">Вижте работата ни</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-number" data-target="50" data-suffix="+">50+</span>
-                    <span class="stat-label">Проекта</span>
+                    <span class="stat-label" data-i18n="hero.stat1">Проекта</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
                     <span class="stat-number" data-target="98" data-suffix="%">98%</span>
-                    <span class="stat-label">Доволни клиенти</span>
+                    <span class="stat-label" data-i18n="hero.stat2">Доволни клиенти</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
                     <span class="stat-number" data-target="2" data-suffix="+">2+</span>
-                    <span class="stat-label">Години опит</span>
+                    <span class="stat-label" data-i18n="hero.stat3">Години опит</span>
                 </div>
             </div>
         </div>
         <div class="hero-scroll">
-            <span>Скролирай надолу</span>
+            <span data-i18n="hero.scroll">Скролирай надолу</span>
             <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- ABOUT                                    -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- ABOUT -->
     <section class="about section" id="about">
         <div class="container">
             <div class="about-grid">
@@ -110,11 +109,11 @@
                         <div class="about-card-stack">
                             <div class="stack-card card-1">
                                 <div class="card-icon">⚡</div>
-                                <span>Бързи сайтове</span>
+                                <span data-i18n="about.card1">Бързи сайтове</span>
                             </div>
                             <div class="stack-card card-2">
                                 <div class="card-icon">🎨</div>
-                                <span>Premium дизайн</span>
+                                <span data-i18n="about.card2">Premium дизайн</span>
                             </div>
                             <div class="stack-card card-3">
                                 <div class="card-icon">📱</div>
@@ -122,39 +121,39 @@
                             </div>
                             <div class="stack-card card-4">
                                 <div class="card-icon">🔒</div>
-                                <span>Сигурност</span>
+                                <span data-i18n="about.card4">Сигурност</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-content fade-in">
-                    <div class="section-label">За нас</div>
-                    <h2 class="section-title">
+                    <div class="section-label" data-i18n="about.label">За нас</div>
+                    <h2 class="section-title" data-i18n-html="about.title">
                         Ние не правим сайтове.<br>
                         Ние правим <span class="gradient-text">изживявания.</span>
                     </h2>
-                    <p class="section-text">
+                    <p class="section-text" data-i18n="about.text1">
                         DevOrion е екип от страстни дизайнери и разработчици, които вярват, че всеки бизнес заслужава изключително онлайн присъствие. Работим с модерните технологии и безкомпромисен подход към качеството.
                     </p>
-                    <p class="section-text">
+                    <p class="section-text" data-i18n="about.text2">
                         От малки визитни сайтове до сложни уеб приложения — изграждаме решения, които работят и впечатляват.
                     </p>
                     <div class="about-features">
                         <div class="feature">
                             <div class="feature-check">✓</div>
-                            <span>Персонализирани решения за всеки клиент</span>
+                            <span data-i18n="about.feat1">Персонализирани решения за всеки клиент</span>
                         </div>
                         <div class="feature">
                             <div class="feature-check">✓</div>
-                            <span>Прозрачна комуникация и спазени срокове</span>
+                            <span data-i18n="about.feat2">Прозрачна комуникация и спазени срокове</span>
                         </div>
                         <div class="feature">
                             <div class="feature-check">✓</div>
-                            <span>Поддръжка след завършване на проекта</span>
+                            <span data-i18n="about.feat3">Поддръжка след завършване на проекта</span>
                         </div>
                     </div>
                     <a href="#contact" class="btn btn-primary" style="margin-top: 2.5rem; display: inline-flex;">
-                        <span>Работете с нас</span>
+                        <span data-i18n="about.btn">Работете с нас</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -164,15 +163,13 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- SERVICES                                 -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- SERVICES -->
     <section class="services section" id="services">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-label">Услуги</div>
-                <h2 class="section-title">Какво предлагаме</h2>
-                <p class="section-subtitle">Пълен набор от дигитални услуги за вашия бизнес</p>
+                <div class="section-label" data-i18n="services.label">Услуги</div>
+                <h2 class="section-title" data-i18n="services.title">Какво предлагаме</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">Пълен набор от дигитални услуги за вашия бизнес</p>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
@@ -182,41 +179,33 @@
                             <path d="M8 21h8M12 17v4"/>
                         </svg>
                     </div>
-                    <h3>Уеб Дизайн</h3>
-                    <p>Красиви, модерни дизайни, създадени да впечатляват и конвертират посетителите в клиенти.</p>
+                    <h3 data-i18n="services.s1.title">Уеб Дизайн</h3>
+                    <p data-i18n="services.s1.desc">Красиви, модерни дизайни, създадени да впечатляват и конвертират посетителите в клиенти.</p>
                     <div class="service-tags">
-                        <span>UI/UX</span>
-                        <span>Figma</span>
-                        <span>Prototype</span>
+                        <span>UI/UX</span><span>Figma</span><span>Prototype</span>
                     </div>
                     <a href="#contact" class="service-link">
-                        Научи повече
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                        <span data-i18n="services.learn">Научи повече</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
                 <div class="service-card featured fade-in">
-                    <div class="service-badge">Популярно</div>
+                    <div class="service-badge" data-i18n="services.badge">Популярно</div>
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <polyline points="16 18 22 12 16 6"/>
                             <polyline points="8 6 2 12 8 18"/>
                         </svg>
                     </div>
-                    <h3>Уеб Разработка</h3>
-                    <p>Мощни, бързи и скалируеми уебсайтове и приложения с най-новите технологии.</p>
+                    <h3 data-i18n="services.s2.title">Уеб Разработка</h3>
+                    <p data-i18n="services.s2.desc">Мощни, бързи и скалируеми уебсайтове и приложения с най-новите технологии.</p>
                     <div class="service-tags">
-                        <span>React</span>
-                        <span>Next.js</span>
-                        <span>Node.js</span>
+                        <span>React</span><span>Next.js</span><span>Node.js</span>
                     </div>
                     <a href="#contact" class="service-link">
-                        Научи повече
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                        <span data-i18n="services.learn">Научи повече</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
@@ -227,18 +216,14 @@
                             <path d="M12 18h.01"/>
                         </svg>
                     </div>
-                    <h3>Мобилни Приложения</h3>
-                    <p>Нативни и хибридни мобилни приложения за iOS и Android с отлично потребителско изживяване.</p>
+                    <h3 data-i18n="services.s3.title">Мобилни Приложения</h3>
+                    <p data-i18n="services.s3.desc">Нативни и хибридни мобилни приложения за iOS и Android с отлично потребителско изживяване.</p>
                     <div class="service-tags">
-                        <span>React Native</span>
-                        <span>iOS</span>
-                        <span>Android</span>
+                        <span>React Native</span><span>iOS</span><span>Android</span>
                     </div>
                     <a href="#contact" class="service-link">
-                        Научи повече
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                        <span data-i18n="services.learn">Научи повече</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
 
@@ -248,100 +233,78 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3>Поддръжка & Хостинг</h3>
-                    <p>Грижим се за вашия сайт 24/7 — обновления, сигурност и техническа поддръжка.</p>
+                    <h3 data-i18n="services.s4.title">Поддръжка & Хостинг</h3>
+                    <p data-i18n="services.s4.desc">Грижим се за вашия сайт 24/7 — обновления, сигурност и техническа поддръжка.</p>
                     <div class="service-tags">
-                        <span>24/7 Support</span>
-                        <span>Security</span>
-                        <span>Updates</span>
+                        <span>24/7 Support</span><span>Security</span><span>Updates</span>
                     </div>
                     <a href="#contact" class="service-link">
-                        Научи повече
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                        <span data-i18n="services.learn">Научи повече</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- PORTFOLIO                                -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- PORTFOLIO -->
     <section class="portfolio section" id="portfolio">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-label">Портфолио</div>
-                <h2 class="section-title">Наши проекти</h2>
-                <p class="section-subtitle">Избрани работи, с които се гордеем</p>
+                <div class="section-label" data-i18n="portfolio.label">Портфолио</div>
+                <h2 class="section-title" data-i18n="portfolio.title">Наши проекти</h2>
+                <p class="section-subtitle" data-i18n="portfolio.subtitle">Избрани работи, с които се гордеем</p>
             </div>
             <div class="portfolio-filter fade-in">
-                <button class="filter-btn active" data-filter="all">Всички</button>
-                <button class="filter-btn" data-filter="web">Уеб</button>
-                <button class="filter-btn" data-filter="app">Приложения</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filter.all">Всички</button>
+                <button class="filter-btn" data-filter="web" data-i18n="portfolio.filter.web">Уеб</button>
+                <button class="filter-btn" data-filter="app" data-i18n="portfolio.filter.app">Приложения</button>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item fade-in" data-category="web">
                     <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop&q=80"
-                            alt="LuxeHotel — луксозен планински хотел"
-                            loading="lazy"
-                        >
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop&q=80" alt="LuxeHotel" loading="lazy">
                         <div class="portfolio-overlay">
-                            <span class="portfolio-category">Уеб</span>
+                            <span class="portfolio-category" data-i18n="portfolio.cat.web">Уеб</span>
                             <h3>LuxeHotel</h3>
-                            <p>Луксозен хотелски уебсайт</p>
-                            <a href="#" class="overlay-btn">Виж проекта →</a>
+                            <p data-i18n="portfolio.p1.desc">Луксозен хотелски уебсайт</p>
+                            <a href="#" class="overlay-btn" data-i18n="portfolio.view">Виж проекта →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item fade-in" data-category="app">
                     <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop&q=80"
-                            alt="FinanceApp — финансово мобилно приложение"
-                            loading="lazy"
-                        >
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop&q=80" alt="FinanceApp" loading="lazy">
                         <div class="portfolio-overlay">
-                            <span class="portfolio-category">Приложение</span>
+                            <span class="portfolio-category" data-i18n="portfolio.cat.app">Приложение</span>
                             <h3>FinanceApp</h3>
-                            <p>Финансово мобилно приложение</p>
-                            <a href="#" class="overlay-btn">Виж проекта →</a>
+                            <p data-i18n="portfolio.p2.desc">Финансово мобилно приложение</p>
+                            <a href="#" class="overlay-btn" data-i18n="portfolio.view">Виж проекта →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item fade-in" data-category="web">
                     <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&h=600&fit=crop&q=80"
-                            alt="Пицария Чичовци — ресторантски уебсайт"
-                            loading="lazy"
-                        >
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&h=600&fit=crop&q=80" alt="Пицария Чичовци" loading="lazy">
                         <div class="portfolio-overlay">
-                            <span class="portfolio-category">Уеб</span>
+                            <span class="portfolio-category" data-i18n="portfolio.cat.web">Уеб</span>
                             <h3>Пицария Чичовци</h3>
-                            <p>Ресторантски уебсайт</p>
-                            <a href="#" class="overlay-btn">Виж проекта →</a>
+                            <p data-i18n="portfolio.p3.desc">Ресторантски уебсайт</p>
+                            <a href="#" class="overlay-btn" data-i18n="portfolio.view">Виж проекта →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item fade-in" data-category="app">
                     <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80"
-                            alt="FitTracker — фитнес приложение"
-                            loading="lazy"
-                        >
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80" alt="FitTracker" loading="lazy">
                         <div class="portfolio-overlay">
-                            <span class="portfolio-category">Приложение</span>
+                            <span class="portfolio-category" data-i18n="portfolio.cat.app">Приложение</span>
                             <h3>FitTracker</h3>
-                            <p>Фитнес приложение</p>
-                            <a href="#" class="overlay-btn">Виж проекта →</a>
+                            <p data-i18n="portfolio.p4.desc">Фитнес приложение</p>
+                            <a href="#" class="overlay-btn" data-i18n="portfolio.view">Виж проекта →</a>
                         </div>
                     </div>
                 </div>
@@ -349,15 +312,13 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- TESTIMONIALS                             -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- TESTIMONIALS -->
     <section class="testimonials section" id="testimonials">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-label">Отзиви</div>
-                <h2 class="section-title">Какво казват клиентите</h2>
-                <p class="section-subtitle">Доверието на нашите клиенти е нашата най-голяма награда</p>
+                <div class="section-label" data-i18n="reviews.label">Отзиви</div>
+                <h2 class="section-title" data-i18n="reviews.title">Какво казват клиентите</h2>
+                <p class="section-subtitle" data-i18n="reviews.subtitle">Доверието на нашите клиенти е нашата най-голяма награда</p>
             </div>
             <div class="testimonials-wrapper fade-in">
                 <div class="testimonials-track" id="testimonialsTrack">
@@ -366,12 +327,10 @@
                             <div class="testimonial-stars">★★★★★</div>
                             <div class="quote-icon">"</div>
                         </div>
-                        <p class="testimonial-text">DevOrion напълно трансформира нашето онлайн присъствие. Сайтът е невероятен и продажбите ни се увеличиха с 40% за първия месец!</p>
+                        <p class="testimonial-text" data-i18n="reviews.t1">DevOrion напълно трансформира нашето онлайн присъствие. Сайтът е невероятен и продажбите ни се увеличиха с 40% за първия месец!</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">МП</div>
-                            <div class="author-info">
-                                <strong>Мария Петрова</strong>
-                            </div>
+                            <div class="author-info"><strong>Мария Петрова</strong></div>
                         </div>
                     </div>
 
@@ -380,12 +339,10 @@
                             <div class="testimonial-stars">★★★★★</div>
                             <div class="quote-icon">"</div>
                         </div>
-                        <p class="testimonial-text">Изключително професионален екип! Спазиха всеки срок и резултатът надмина очакванията ни. Определено ще работим отново заедно.</p>
+                        <p class="testimonial-text" data-i18n="reviews.t2">Изключително професионален екип! Спазиха всеки срок и резултатът надмина очакванията ни. Определено ще работим отново заедно.</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">ГД</div>
-                            <div class="author-info">
-                                <strong>Георги Димитров</strong>
-                            </div>
+                            <div class="author-info"><strong>Георги Димитров</strong></div>
                         </div>
                     </div>
 
@@ -394,12 +351,10 @@
                             <div class="testimonial-stars">★★★★★</div>
                             <div class="quote-icon">"</div>
                         </div>
-                        <p class="testimonial-text">Най-добрата инвестиция в нашия бизнес! Сайтът зарежда светкавично бързо и изглежда перфектно на всяко устройство.</p>
+                        <p class="testimonial-text" data-i18n="reviews.t3">Най-добрата инвестиция в нашия бизнес! Сайтът зарежда светкавично бързо и изглежда перфектно на всяко устройство.</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">ИС</div>
-                            <div class="author-info">
-                                <strong>Ивана Стоянова</strong>
-                            </div>
+                            <div class="author-info"><strong>Ивана Стоянова</strong></div>
                         </div>
                     </div>
 
@@ -408,23 +363,21 @@
                             <div class="testimonial-stars">★★★★★</div>
                             <div class="quote-icon">"</div>
                         </div>
-                        <p class="testimonial-text">Работата с DevOrion беше истинско удоволствие. Разбраха нашата визия от самото начало и я реализираха перфектно.</p>
+                        <p class="testimonial-text" data-i18n="reviews.t4">Работата с DevOrion беше истинско удоволствие. Разбраха нашата визия от самото начало и я реализираха перфектно.</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">АН</div>
-                            <div class="author-info">
-                                <strong>Александър Николов</strong>
-                            </div>
+                            <div class="author-info"><strong>Александър Николов</strong></div>
                         </div>
                     </div>
                 </div>
                 <div class="slider-controls">
-                    <button class="slider-btn" id="prevBtn" aria-label="Предишен">
+                    <button class="slider-btn" id="prevBtn" aria-label="Previous">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M19 12H5M12 19l-7-7 7-7"/>
                         </svg>
                     </button>
                     <div class="slider-dots" id="sliderDots"></div>
-                    <button class="slider-btn" id="nextBtn" aria-label="Следващ">
+                    <button class="slider-btn" id="nextBtn" aria-label="Next">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -434,19 +387,17 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- CONTACT                                  -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- CONTACT -->
     <section class="contact section" id="contact">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info fade-in">
-                    <div class="section-label">Контакти</div>
-                    <h2 class="section-title">
+                    <div class="section-label" data-i18n="contact.label">Контакти</div>
+                    <h2 class="section-title" data-i18n-html="contact.title">
                         Готови ли сте да<br>
                         <span class="gradient-text">започнем?</span>
                     </h2>
-                    <p class="section-text">
+                    <p class="section-text" data-i18n="contact.text">
                         Разкажете ни за вашия проект и ние ще се свържем с вас в рамките на 24 часа с безплатна консултация.
                     </p>
                     <div class="contact-details">
@@ -457,7 +408,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <strong>Телефон</strong>
+                                <strong data-i18n="contact.phone.label">Телефон</strong>
                                 <span>0878 203 046</span>
                                 <span>0888 883 796</span>
                             </div>
@@ -470,7 +421,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <strong>Имейл</strong>
+                                <strong data-i18n="contact.email.label">Имейл</strong>
                                 <span>DevOrion@yahoo.com</span>
                             </div>
                         </div>
@@ -482,7 +433,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <strong>Адрес</strong>
+                                <strong data-i18n="contact.address.label">Адрес</strong>
                                 <span>София</span>
                             </div>
                         </div>
@@ -493,23 +444,23 @@
                     <form class="contact-form" id="contactForm" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Вашето име</label>
-                                <input type="text" id="name" name="name" placeholder="Иван Иванов" required autocomplete="name">
+                                <label for="name" data-i18n="form.name.label">Вашето име</label>
+                                <input type="text" id="name" name="name" data-i18n-placeholder="form.name.placeholder" placeholder="Иван Иванов" required autocomplete="name">
                             </div>
                             <div class="form-group">
-                                <label for="email">Имейл адрес</label>
+                                <label for="email" data-i18n="form.email.label">Имейл адрес</label>
                                 <input type="email" id="email" name="email" placeholder="ivan@example.com" required autocomplete="email">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="service">Услуга</label>
+                            <label for="service" data-i18n="form.service.label">Услуга</label>
                             <div class="select-wrapper">
                                 <select id="service" name="service">
-                                    <option value="">Изберете услуга...</option>
-                                    <option>Уеб Дизайн</option>
-                                    <option>Уеб Разработка</option>
-                                    <option>Мобилно Приложение</option>
-                                    <option>Друго</option>
+                                    <option value="" data-i18n="form.service.opt0">Изберете услуга...</option>
+                                    <option data-i18n="form.service.opt1">Уеб Дизайн</option>
+                                    <option data-i18n="form.service.opt2">Уеб Разработка</option>
+                                    <option data-i18n="form.service.opt3">Мобилно Приложение</option>
+                                    <option data-i18n="form.service.opt4">Друго</option>
                                 </select>
                                 <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="6 9 12 15 18 9"/>
@@ -517,11 +468,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="message">Разкажете за проекта</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Опишете вашия проект, бюджет, срокове..."></textarea>
+                            <label for="message" data-i18n="form.message.label">Разкажете за проекта</label>
+                            <textarea id="message" name="message" rows="5" data-i18n-placeholder="form.message.placeholder" placeholder="Опишете вашия проект, бюджет, срокове..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-                            <span>Изпратете съобщение</span>
+                            <span data-i18n="form.submit">Изпратете съобщение</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
                             </svg>
@@ -530,7 +481,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            Съобщението беше изпратено успешно
+                            <span data-i18n="form.success">Съобщението беше изпратено успешно</span>
                         </div>
                         <div class="form-error" id="formError">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20">
@@ -538,7 +489,7 @@
                                 <line x1="12" y1="8" x2="12" y2="12"/>
                                 <line x1="12" y1="16" x2="12.01" y2="16"/>
                             </svg>
-                            Възникна проблем. Опитайте отново
+                            <span data-i18n="form.error">Възникна проблем. Опитайте отново</span>
                         </div>
                     </form>
                 </div>
@@ -546,9 +497,7 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- FOOTER                                   -->
-    <!-- ═══════════════════════════════════════ -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -557,12 +506,10 @@
                         <span class="logo-dot"></span>
                         DevOrion
                     </a>
-                    <p>Изграждаме дигиталното бъдеще, един проект наведнъж.</p>
+                    <p data-i18n="footer.tagline">Изграждаме дигиталното бъдеще, един проект наведнъж.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                            </svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
                         </a>
                         <a href="#" class="social-link" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -587,27 +534,27 @@
                 </div>
 
                 <div class="footer-links">
-                    <h4>Навигация</h4>
+                    <h4 data-i18n="footer.nav.title">Навигация</h4>
                     <ul>
-                        <li><a href="#about">За нас</a></li>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#portfolio">Портфолио</a></li>
-                        <li><a href="#testimonials">Отзиви</a></li>
-                        <li><a href="#contact">Контакти</a></li>
+                        <li><a href="#about"        data-i18n="nav.about">За нас</a></li>
+                        <li><a href="#services"     data-i18n="nav.services">Услуги</a></li>
+                        <li><a href="#portfolio"    data-i18n="nav.portfolio">Портфолио</a></li>
+                        <li><a href="#testimonials" data-i18n="nav.reviews">Отзиви</a></li>
+                        <li><a href="#contact"      data-i18n="nav.contact">Контакти</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-links">
-                    <h4>Услуги</h4>
+                    <h4 data-i18n="footer.services.title">Услуги</h4>
                     <ul>
-                        <li><a href="#services">Уеб Дизайн</a></li>
-                        <li><a href="#services">Уеб Разработка</a></li>
-                        <li><a href="#services">Мобилни Приложения</a></li>
+                        <li><a href="#services" data-i18n="services.s1.title">Уеб Дизайн</a></li>
+                        <li><a href="#services" data-i18n="services.s2.title">Уеб Разработка</a></li>
+                        <li><a href="#services" data-i18n="services.s3.title">Мобилни Приложения</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-links">
-                    <h4>Контакти</h4>
+                    <h4 data-i18n="footer.contact.title">Контакти</h4>
                     <ul>
                         <li><a href="tel:0878203046">0878 203 046</a></li>
                         <li><a href="tel:0888883796">0888 883 796</a></li>
@@ -618,10 +565,10 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2024 DevOrion. Всички права запазени.</p>
+                <p data-i18n="footer.copyright">© 2024 DevOrion. Всички права запазени.</p>
                 <div class="footer-legal">
-                    <a href="#">Поверителност</a>
-                    <a href="#">Условия</a>
+                    <a href="#" data-i18n="footer.privacy">Поверителност</a>
+                    <a href="#" data-i18n="footer.terms">Условия</a>
                 </div>
             </div>
         </div>

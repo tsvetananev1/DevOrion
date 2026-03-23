@@ -457,4 +457,257 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 })();
 
 console.log('%cDevOrion 🚀', 'color:#6c63ff;font-size:1.4rem;font-weight:700;');
-console.log('%cПремиум уеб разработка — hello@devcraft.bg', 'color:#9898b8;font-size:.85rem;');
+console.log('%cPremium Web Development — DevOrion@yahoo.com', 'color:#9898b8;font-size:.85rem;');
+
+/* ── LANGUAGE / i18n ─────────────────────────────────────────── */
+(function initI18n() {
+
+    const translations = {
+        bg: {
+            // Nav
+            'nav.about':       'За нас',
+            'nav.services':    'Услуги',
+            'nav.portfolio':   'Портфолио',
+            'nav.reviews':     'Отзиви',
+            'nav.contact':     'Контакти',
+
+            // Hero
+            'hero.badge':       'Дигитална Агенция',
+            'hero.title':       'Изграждаме<br><span class="gradient-text">дигиталното</span><br>бъдеще',
+            'hero.subtitle':    'Превръщаме вашите идеи в красиви, мощни уебсайтове,<br class="br-desktop">които впечатляват и конвертират.',
+            'hero.cta.primary': 'Започнете проект',
+            'hero.cta.secondary':'Вижте работата ни',
+            'hero.stat1':       'Проекта',
+            'hero.stat2':       'Доволни клиенти',
+            'hero.stat3':       'Години опит',
+            'hero.scroll':      'Скролирай надолу',
+
+            // About
+            'about.label':  'За нас',
+            'about.title':  'Ние не правим сайтове.<br>Ние правим <span class="gradient-text">изживявания.</span>',
+            'about.text1':  'DevOrion е екип от страстни дизайнери и разработчици, които вярват, че всеки бизнес заслужава изключително онлайн присъствие. Работим с модерните технологии и безкомпромисен подход към качеството.',
+            'about.text2':  'От малки визитни сайтове до сложни уеб приложения — изграждаме решения, които работят и впечатляват.',
+            'about.feat1':  'Персонализирани решения за всеки клиент',
+            'about.feat2':  'Прозрачна комуникация и спазени срокове',
+            'about.feat3':  'Поддръжка след завършване на проекта',
+            'about.card1':  'Бързи сайтове',
+            'about.card2':  'Premium дизайн',
+            'about.card4':  'Сигурност',
+            'about.btn':    'Работете с нас',
+
+            // Services
+            'services.label':    'Услуги',
+            'services.title':    'Какво предлагаме',
+            'services.subtitle': 'Пълен набор от дигитални услуги за вашия бизнес',
+            'services.badge':    'Популярно',
+            'services.learn':    'Научи повече',
+            'services.s1.title': 'Уеб Дизайн',
+            'services.s1.desc':  'Красиви, модерни дизайни, създадени да впечатляват и конвертират посетителите в клиенти.',
+            'services.s2.title': 'Уеб Разработка',
+            'services.s2.desc':  'Мощни, бързи и скалируеми уебсайтове и приложения с най-новите технологии.',
+            'services.s3.title': 'Мобилни Приложения',
+            'services.s3.desc':  'Нативни и хибридни мобилни приложения за iOS и Android с отлично потребителско изживяване.',
+            'services.s4.title': 'Поддръжка & Хостинг',
+            'services.s4.desc':  'Грижим се за вашия сайт 24/7 — обновления, сигурност и техническа поддръжка.',
+
+            // Portfolio
+            'portfolio.label':      'Портфолио',
+            'portfolio.title':      'Наши проекти',
+            'portfolio.subtitle':   'Избрани работи, с които се гордеем',
+            'portfolio.filter.all': 'Всички',
+            'portfolio.filter.web': 'Уеб',
+            'portfolio.filter.app': 'Приложения',
+            'portfolio.cat.web':    'Уеб',
+            'portfolio.cat.app':    'Приложение',
+            'portfolio.p1.desc':    'Луксозен хотелски уебсайт',
+            'portfolio.p2.desc':    'Финансово мобилно приложение',
+            'portfolio.p3.desc':    'Ресторантски уебсайт',
+            'portfolio.p4.desc':    'Фитнес приложение',
+            'portfolio.view':       'Виж проекта →',
+
+            // Reviews
+            'reviews.label':    'Отзиви',
+            'reviews.title':    'Какво казват клиентите',
+            'reviews.subtitle': 'Доверието на нашите клиенти е нашата най-голяма награда',
+            'reviews.t1': 'DevOrion напълно трансформира нашето онлайн присъствие. Сайтът е невероятен и продажбите ни се увеличиха с 40% за първия месец!',
+            'reviews.t2': 'Изключително професионален екип! Спазиха всеки срок и резултатът надмина очакванията ни. Определено ще работим отново заедно.',
+            'reviews.t3': 'Най-добрата инвестиция в нашия бизнес! Сайтът зарежда светкавично бързо и изглежда перфектно на всяко устройство.',
+            'reviews.t4': 'Работата с DevOrion беше истинско удоволствие. Разбраха нашата визия от самото начало и я реализираха перфектно.',
+
+            // Contact
+            'contact.label':        'Контакти',
+            'contact.title':        'Готови ли сте да<br><span class="gradient-text">започнем?</span>',
+            'contact.text':         'Разкажете ни за вашия проект и ние ще се свържем с вас в рамките на 24 часа с безплатна консултация.',
+            'contact.phone.label':  'Телефон',
+            'contact.email.label':  'Имейл',
+            'contact.address.label':'Адрес',
+
+            // Form
+            'form.name.label':        'Вашето име',
+            'form.name.placeholder':  'Иван Иванов',
+            'form.email.label':       'Имейл адрес',
+            'form.service.label':     'Услуга',
+            'form.service.opt0':      'Изберете услуга...',
+            'form.service.opt1':      'Уеб Дизайн',
+            'form.service.opt2':      'Уеб Разработка',
+            'form.service.opt3':      'Мобилно Приложение',
+            'form.service.opt4':      'Друго',
+            'form.message.label':     'Разкажете за проекта',
+            'form.message.placeholder':'Опишете вашия проект, бюджет, срокове...',
+            'form.submit':            'Изпратете съобщение',
+            'form.success':           'Съобщението беше изпратено успешно',
+            'form.error':             'Възникна проблем. Опитайте отново',
+
+            // Footer
+            'footer.tagline':        'Изграждаме дигиталното бъдеще, един проект наведнъж.',
+            'footer.nav.title':      'Навигация',
+            'footer.services.title': 'Услуги',
+            'footer.contact.title':  'Контакти',
+            'footer.copyright':      '© 2024 DevOrion. Всички права запазени.',
+            'footer.privacy':        'Поверителност',
+            'footer.terms':          'Условия',
+        },
+
+        en: {
+            // Nav
+            'nav.about':       'About',
+            'nav.services':    'Services',
+            'nav.portfolio':   'Portfolio',
+            'nav.reviews':     'Reviews',
+            'nav.contact':     'Contact',
+
+            // Hero
+            'hero.badge':        'Digital Agency',
+            'hero.title':        'We build<br><span class="gradient-text">the digital</span><br>future',
+            'hero.subtitle':     'We turn your ideas into beautiful, powerful websites<br class="br-desktop">that impress and convert.',
+            'hero.cta.primary':  'Start a Project',
+            'hero.cta.secondary':'See Our Work',
+            'hero.stat1':        'Projects',
+            'hero.stat2':        'Happy Clients',
+            'hero.stat3':        'Years of Experience',
+            'hero.scroll':       'Scroll down',
+
+            // About
+            'about.label':  'About Us',
+            'about.title':  'We don\'t build websites.<br>We build <span class="gradient-text">experiences.</span>',
+            'about.text1':  'DevOrion is a team of passionate designers and developers who believe every business deserves an exceptional online presence. We work with modern technologies and an uncompromising approach to quality.',
+            'about.text2':  'From small landing pages to complex web applications — we build solutions that work and impress.',
+            'about.feat1':  'Customized solutions for every client',
+            'about.feat2':  'Transparent communication and on-time delivery',
+            'about.feat3':  'Ongoing support after project completion',
+            'about.card1':  'Fast Websites',
+            'about.card2':  'Premium Design',
+            'about.card4':  'Security',
+            'about.btn':    'Work With Us',
+
+            // Services
+            'services.label':    'Services',
+            'services.title':    'What We Offer',
+            'services.subtitle': 'A full suite of digital services for your business',
+            'services.badge':    'Popular',
+            'services.learn':    'Learn More',
+            'services.s1.title': 'Web Design',
+            'services.s1.desc':  'Beautiful, modern designs crafted to impress and convert visitors into customers.',
+            'services.s2.title': 'Web Development',
+            'services.s2.desc':  'Powerful, fast, and scalable websites and applications built with the latest technologies.',
+            'services.s3.title': 'Mobile Apps',
+            'services.s3.desc':  'Native and hybrid mobile applications for iOS and Android with an outstanding user experience.',
+            'services.s4.title': 'Maintenance & Hosting',
+            'services.s4.desc':  'We take care of your website 24/7 — updates, security, and technical support.',
+
+            // Portfolio
+            'portfolio.label':      'Portfolio',
+            'portfolio.title':      'Our Projects',
+            'portfolio.subtitle':   'Selected work we\'re proud of',
+            'portfolio.filter.all': 'All',
+            'portfolio.filter.web': 'Web',
+            'portfolio.filter.app': 'Apps',
+            'portfolio.cat.web':    'Web',
+            'portfolio.cat.app':    'App',
+            'portfolio.p1.desc':    'Luxury hotel website',
+            'portfolio.p2.desc':    'Finance mobile application',
+            'portfolio.p3.desc':    'Restaurant website',
+            'portfolio.p4.desc':    'Fitness application',
+            'portfolio.view':       'View Project →',
+
+            // Reviews
+            'reviews.label':    'Reviews',
+            'reviews.title':    'What Clients Say',
+            'reviews.subtitle': 'Our clients\' trust is our greatest reward',
+            'reviews.t1': 'DevOrion completely transformed our online presence. The website is incredible and our sales increased by 40% in the first month!',
+            'reviews.t2': 'An exceptionally professional team! They met every deadline and the result exceeded our expectations. We will definitely work together again.',
+            'reviews.t3': 'The best investment in our business! The website loads lightning fast and looks perfect on every device.',
+            'reviews.t4': 'Working with DevOrion was a true pleasure. They understood our vision from the very beginning and delivered it perfectly.',
+
+            // Contact
+            'contact.label':        'Contact',
+            'contact.title':        'Ready to<br><span class="gradient-text">get started?</span>',
+            'contact.text':         'Tell us about your project and we will reach out within 24 hours with a free consultation.',
+            'contact.phone.label':  'Phone',
+            'contact.email.label':  'Email',
+            'contact.address.label':'Address',
+
+            // Form
+            'form.name.label':        'Your Name',
+            'form.name.placeholder':  'John Doe',
+            'form.email.label':       'Email Address',
+            'form.service.label':     'Service',
+            'form.service.opt0':      'Select a service...',
+            'form.service.opt1':      'Web Design',
+            'form.service.opt2':      'Web Development',
+            'form.service.opt3':      'Mobile App',
+            'form.service.opt4':      'Other',
+            'form.message.label':     'Tell Us About Your Project',
+            'form.message.placeholder':'Describe your project, budget, timeline...',
+            'form.submit':            'Send Message',
+            'form.success':           'Your message was sent successfully!',
+            'form.error':             'Something went wrong. Please try again.',
+
+            // Footer
+            'footer.tagline':        'Building the digital future, one project at a time.',
+            'footer.nav.title':      'Navigation',
+            'footer.services.title': 'Services',
+            'footer.contact.title':  'Contact',
+            'footer.copyright':      '© 2024 DevOrion. All rights reserved.',
+            'footer.privacy':        'Privacy Policy',
+            'footer.terms':          'Terms of Use',
+        }
+    };
+
+    let currentLang = 'bg';
+
+    function applyLang(lang) {
+        const t = translations[lang];
+
+        // textContent replacements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.textContent = t[key];
+        });
+
+        // innerHTML replacements (gradient spans, line breaks)
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+
+        // placeholder replacements
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (t[key] !== undefined) el.placeholder = t[key];
+        });
+
+        // html lang attribute
+        document.documentElement.lang = lang;
+
+        // toggle button active state
+        document.getElementById('langBg').classList.toggle('lang-active', lang === 'bg');
+        document.getElementById('langEn').classList.toggle('lang-active', lang === 'en');
+    }
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+        currentLang = currentLang === 'bg' ? 'en' : 'bg';
+        applyLang(currentLang);
+    });
+
+})();
