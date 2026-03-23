@@ -347,7 +347,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* ── CONTACT FORM ───────────────────────────────────────────── */
 (function initForm() {
-    const FORMSPREE_URL = 'https://formspree.io/f/mreyrqnn';
+    const FORMSPREE_URL = 'https://formspree.io/f/xkoqdrgo';
 
     const form    = document.getElementById('contactForm');
     const success = document.getElementById('formSuccess');
