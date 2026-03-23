@@ -961,6 +961,21 @@ button { font-family: var(--font-b); }
     transform: translateY(0);
 }
 
+/* На touch устройства (телефон/таблет) — overlay винаги видим */
+@media (hover: none) {
+    .portfolio-overlay {
+        opacity: 1;
+        background: linear-gradient(to top,
+            rgba(5, 5, 15, 0.92) 0%,
+            rgba(5, 5, 15, 0.4) 55%,
+            transparent 100%
+        );
+    }
+    .portfolio-overlay > * {
+        transform: translateY(0);
+    }
+}
+
 .portfolio-overlay > *:nth-child(2) { transition-delay: 0.04s; }
 .portfolio-overlay > *:nth-child(3) { transition-delay: 0.08s; }
 .portfolio-overlay > *:nth-child(4) { transition-delay: 0.12s; }
