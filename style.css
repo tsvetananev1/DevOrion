@@ -1415,7 +1415,7 @@ button { font-family: var(--font-b); }
     border-radius: 50%;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
-    color: var(--text-2);
+    color: #ffffff;
     font-size: 0.9rem;
     cursor: pointer;
     transition: var(--transition);
@@ -1445,7 +1445,7 @@ button { font-family: var(--font-b); }
     background-clip: text;
 }
 .modal-text {
-    color: var(--text-2);
+    color: #ffffff;
     font-size: 0.95rem;
     line-height: 1.75;
     margin-bottom: 1.5rem;
@@ -1458,7 +1458,7 @@ button { font-family: var(--font-b); }
     margin: 0 auto 1.25rem;
 }
 .modal-sub {
-    color: var(--text-3);
+    color: rgba(255,255,255,0.75);
     font-size: 0.85rem;
     margin-bottom: 1.75rem;
 }
