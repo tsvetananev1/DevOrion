@@ -456,6 +456,50 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     sections.forEach(s => io.observe(s));
 })();
 
+/* ── PROJECT MODAL ───────────────────────────────────────────── */
+(function initModal() {
+    const backdrop = document.getElementById('modalBackdrop');
+    const closeBtn = document.getElementById('modalClose');
+    const modalBtn = document.querySelector('.modal-btn');
+    if (!backdrop) return;
+
+    function openModal() {
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    // Open on every "Виж проекта" click
+    document.querySelectorAll('.overlay-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    // Close on X button
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on backdrop click
+    backdrop.addEventListener('click', e => {
+        if (e.target === backdrop) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Close modal and scroll to contact when clicking the contact button
+    if (modalBtn) {
+        modalBtn.addEventListener('click', () => closeModal());
+    }
+})();
+
 console.log('%cDevOrion 🚀', 'color:#6c63ff;font-size:1.4rem;font-weight:700;');
 console.log('%cPremium Web Development — DevOrion@yahoo.com', 'color:#9898b8;font-size:.85rem;');
 
