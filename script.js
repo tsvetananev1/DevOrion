@@ -391,6 +391,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
                 form.reset();
                 success.classList.add('visible');
                 setTimeout(() => success.classList.remove('visible'), 7000);
+                launchRocket(btn);
             } else {
                 error.classList.add('visible');
                 setTimeout(() => error.classList.remove('visible'), 6000);
@@ -413,6 +414,97 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             el.style.borderColor = '';
             el.style.animation   = '';
         }, 600);
+    }
+
+    function launchRocket(btn) {
+        const rect = btn.getBoundingClientRect();
+
+        const rocket = document.createElement('div');
+        rocket.textContent = '🚀';
+        rocket.style.cssText = `
+            position: fixed;
+            left: ${rect.right}px;
+            top: ${rect.top + rect.height / 2}px;
+            font-size: 2rem;
+            z-index: 99999;
+            pointer-events: none;
+            transform: translateY(-50%) rotate(-45deg);
+            transition: left 0.9s cubic-bezier(0.4,0,0.2,1), top 0.9s cubic-bezier(0.4,0,0.2,1), opacity 0.15s ease 0.8s;
+        `;
+        document.body.appendChild(rocket);
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                rocket.style.left = '20px';
+                rocket.style.top  = '20px';
+                rocket.style.opacity = '0';
+            });
+        });
+
+        setTimeout(() => {
+            rocket.remove();
+            createExplosion(20, 20);
+        }, 950);
+    }
+
+    function createExplosion(x, y) {
+        const colors = ['#6C63FF','#00D4FF','#bf5af2','#ff6b6b','#ffd93d','#ffffff'];
+        const container = document.createElement('div');
+        container.style.cssText = `
+            position: fixed;
+            left: ${x}px;
+            top: ${y}px;
+            pointer-events: none;
+            z-index: 99999;
+        `;
+        document.body.appendChild(container);
+
+        for (let i = 0; i < 20; i++) {
+            const p = document.createElement('div');
+            const angle = (i / 20) * 360;
+            const dist  = 40 + Math.random() * 60;
+            const dx    = Math.cos(angle * Math.PI / 180) * dist;
+            const dy    = Math.sin(angle * Math.PI / 180) * dist;
+            const size  = 4 + Math.random() * 6;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            p.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                border-radius: 50%;
+                background: ${color};
+                left: 0; top: 0;
+                transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+                opacity: 1;
+            `;
+            container.appendChild(p);
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    p.style.transform = `translate(${dx}px, ${dy}px)`;
+                    p.style.opacity   = '0';
+                });
+            });
+        }
+
+        const boom = document.createElement('div');
+        boom.textContent = '💥';
+        boom.style.cssText = `
+            position: absolute;
+            font-size: 2.5rem;
+            left: -20px; top: -20px;
+            transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+            transform: scale(0.5);
+            opacity: 1;
+        `;
+        container.appendChild(boom);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                boom.style.transform = 'scale(1.5)';
+                boom.style.opacity   = '0';
+            });
+        });
+
+        setTimeout(() => container.remove(), 800);
     }
 
     if (!document.getElementById('shakeStyle')) {
