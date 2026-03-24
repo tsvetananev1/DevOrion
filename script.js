@@ -193,8 +193,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         requestAnimationFrame(() => {
             const s = window.scrollY;
             if (s < window.innerHeight) {
-                heroContent.style.transform = `translateY(${s * 0.18}px)`;
-                heroContent.style.opacity   = `${Math.max(0, 1 - s / (window.innerHeight * 1.1))}`;
+                heroContent.style.transform = `translateY(${s * 0.12}px)`;
+                heroContent.style.opacity   = `${Math.max(0, 1 - s / (window.innerHeight * 1.6))}`;
             }
             ticking = false;
         });
