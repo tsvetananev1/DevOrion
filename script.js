@@ -548,6 +548,67 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     sections.forEach(s => io.observe(s));
 })();
 
+/* ── SERVICE MODAL ───────────────────────────────────────────── */
+(function initServiceModal() {
+    const backdrop = document.getElementById('serviceModalBackdrop');
+    const closeBtn = document.getElementById('serviceModalClose');
+    const modalBtn = document.getElementById('serviceModalBtn');
+    const titleEl  = document.getElementById('serviceModalTitle');
+    const textEl   = document.getElementById('serviceModalText');
+    const subEl    = document.getElementById('serviceModalSub');
+    if (!backdrop) return;
+
+    const content = {
+        'web-design': {
+            title: 'Уеб Дизайн',
+            text:  'Създаваме модерни и атрактивни дизайни, които отразяват идентичността на вашия бизнес и привличат вниманието на посетителите. Всеки детайл е внимателно обмислен — от цветовата палитра до потребителското изживяване.',
+            sub:   'Свържете се с нас и заедно ще създадем дизайна на вашата мечта.'
+        },
+        'web-dev': {
+            title: 'Уеб Разработка',
+            text:  'Изграждаме бързи, сигурни и скалируеми уебсайтове и уеб приложения с използване на най-новите технологии като React и Node.js. Кодът ни е чист, оптимизиран и лесен за поддръжка в дългосрочен план.',
+            sub:   'Разкажете ни за вашия проект и ще намерим най-доброто решение.'
+        },
+        'mobile': {
+            title: 'Мобилни Приложения',
+            text:  'Разработваме нативни и хибридни мобилни приложения за iOS и Android с интуитивен интерфейс и отлична производителност. Вашите потребители ще получат плавно и приятно изживяване на всяко устройство.',
+            sub:   'Имате идея за приложение? Свържете се с нас днес.'
+        },
+        'hosting': {
+            title: 'Поддръжка & Хостинг',
+            text:  'Осигуряваме надеждна техническа поддръжка и хостинг решения, така че вашият сайт да работи непрекъснато и сигурно 24/7. Грижим се за всички обновления и защита, докато вие се фокусирате върху бизнеса си.',
+            sub:   'Оставете техническите грижи на нас — свържете се с нас.'
+        }
+    };
+
+    function openServiceModal(service) {
+        const data = content[service];
+        if (!data) return;
+        titleEl.textContent = data.title;
+        textEl.textContent  = data.text;
+        subEl.textContent   = data.sub;
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeServiceModal() {
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.service-link[data-service]').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            openServiceModal(link.dataset.service);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeServiceModal);
+    backdrop.addEventListener('click', e => { if (e.target === backdrop) closeServiceModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeServiceModal(); });
+    if (modalBtn) modalBtn.addEventListener('click', () => closeServiceModal());
+})();
+
 /* ── PROJECT MODAL ───────────────────────────────────────────── */
 (function initModal() {
     const backdrop = document.getElementById('modalBackdrop');

@@ -198,7 +198,7 @@
                     <div class="service-tags">
                         <span>UI/UX</span><span>Figma</span><span>Prototype</span>
                     </div>
-                    <a href="#contact" class="service-link">
+                    <a href="#" class="service-link" data-service="web-design">
                         <span data-i18n="services.learn">Научи повече</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -217,7 +217,7 @@
                     <div class="service-tags">
                         <span>React</span><span>Next.js</span><span>Node.js</span>
                     </div>
-                    <a href="#contact" class="service-link">
+                    <a href="#" class="service-link" data-service="web-dev">
                         <span data-i18n="services.learn">Научи повече</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -235,7 +235,7 @@
                     <div class="service-tags">
                         <span>React Native</span><span>iOS</span><span>Android</span>
                     </div>
-                    <a href="#contact" class="service-link">
+                    <a href="#" class="service-link" data-service="mobile">
                         <span data-i18n="services.learn">Научи повече</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -252,7 +252,7 @@
                     <div class="service-tags">
                         <span>24/7 Support</span><span>Security</span><span>Updates</span>
                     </div>
-                    <a href="#contact" class="service-link">
+                    <a href="#" class="service-link" data-service="hosting">
                         <span data-i18n="services.learn">Научи повече</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -587,6 +587,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- SERVICE MODAL -->
+    <div class="modal-backdrop" id="serviceModalBackdrop">
+        <div class="modal-box">
+            <button class="modal-close" id="serviceModalClose" aria-label="Затвори">✕</button>
+            <div class="modal-icon" id="serviceModalIcon">🤓</div>
+            <h3 class="modal-title" id="serviceModalTitle"></h3>
+            <p class="modal-text" id="serviceModalText"></p>
+            <div class="modal-divider"></div>
+            <p class="modal-sub" id="serviceModalSub"></p>
+            <a href="#contact" class="btn btn-primary modal-btn" id="serviceModalBtn">
+                <span>Свържете се с нас</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
 
     <!-- PROJECT MODAL -->
     <div class="modal-backdrop" id="modalBackdrop">
